@@ -90,6 +90,7 @@
   <ItemGroup>
     <Content Include="License.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\fo-dicom.1.0.38\build\fo-dicom.targets" Condition="Exists('..\packages\fo-dicom.1.0.38\build\fo-dicom.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
