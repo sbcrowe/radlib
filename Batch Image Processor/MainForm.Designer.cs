@@ -1,6 +1,6 @@
 ﻿namespace BatchImageProcessor
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,29 +30,31 @@
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.processToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.expandDimensionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.extractROIValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ConvertToJpegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.convertToTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ConvertToPngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ConvertToBmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.processToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConvertToBmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConvertToJpegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConvertToPngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convertToTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ExpandDimensionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExtractRoiValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutRadLibToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutRadLibToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.FileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FileSizeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FilePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ClearFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -75,19 +77,40 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddFileToolStripMenuItem,
             this.AddFolderToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.ClearFilesToolStripMenuItem,
             this.toolStripSeparator3,
             this.ExitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // statusStrip1
+            // AddFileToolStripMenuItem
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip";
+            this.AddFileToolStripMenuItem.Name = "AddFileToolStripMenuItem";
+            this.AddFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.AddFileToolStripMenuItem.Text = "Add File";
+            this.AddFileToolStripMenuItem.Click += new System.EventHandler(this.AddFileToolStripMenuItem_Click);
+            // 
+            // AddFolderToolStripMenuItem
+            // 
+            this.AddFolderToolStripMenuItem.Name = "AddFolderToolStripMenuItem";
+            this.AddFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.AddFolderToolStripMenuItem.Text = "Add Folder";
+            this.AddFolderToolStripMenuItem.Click += new System.EventHandler(this.AddFolderToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            // 
+            // ExitToolStripMenuItem
+            // 
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ExitToolStripMenuItem.Text = "Exit";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // processToolStripMenuItem
             // 
@@ -97,48 +120,11 @@
             this.ConvertToPngToolStripMenuItem,
             this.convertToTextToolStripMenuItem,
             this.toolStripSeparator2,
-            this.expandDimensionsToolStripMenuItem,
-            this.extractROIValuesToolStripMenuItem});
+            this.ExpandDimensionsToolStripMenuItem,
+            this.ExtractRoiValuesToolStripMenuItem});
             this.processToolStripMenuItem.Name = "processToolStripMenuItem";
             this.processToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.processToolStripMenuItem.Text = "Process";
-            // 
-            // expandDimensionsToolStripMenuItem
-            // 
-            this.expandDimensionsToolStripMenuItem.Name = "expandDimensionsToolStripMenuItem";
-            this.expandDimensionsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.expandDimensionsToolStripMenuItem.Text = "Expand Dimensions";
-            // 
-            // extractROIValuesToolStripMenuItem
-            // 
-            this.extractROIValuesToolStripMenuItem.Name = "extractROIValuesToolStripMenuItem";
-            this.extractROIValuesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.extractROIValuesToolStripMenuItem.Text = "Extract ROI values";
-            // 
-            // ConvertToJpegToolStripMenuItem
-            // 
-            this.ConvertToJpegToolStripMenuItem.Name = "ConvertToJpegToolStripMenuItem";
-            this.ConvertToJpegToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.ConvertToJpegToolStripMenuItem.Text = "Convert to JPEG";
-            this.ConvertToJpegToolStripMenuItem.Click += new System.EventHandler(this.ConvertToJpegToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(174, 6);
-            // 
-            // convertToTextToolStripMenuItem
-            // 
-            this.convertToTextToolStripMenuItem.Name = "convertToTextToolStripMenuItem";
-            this.convertToTextToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.convertToTextToolStripMenuItem.Text = "Convert to text";
-            // 
-            // ConvertToPngToolStripMenuItem
-            // 
-            this.ConvertToPngToolStripMenuItem.Name = "ConvertToPngToolStripMenuItem";
-            this.ConvertToPngToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.ConvertToPngToolStripMenuItem.Text = "Convert to PNG";
-            this.ConvertToPngToolStripMenuItem.Click += new System.EventHandler(this.ConvertToPngToolStripMenuItem_Click);
             // 
             // ConvertToBmpToolStripMenuItem
             // 
@@ -147,13 +133,43 @@
             this.ConvertToBmpToolStripMenuItem.Text = "Convert to BMP";
             this.ConvertToBmpToolStripMenuItem.Click += new System.EventHandler(this.ConvertToBmpToolStripMenuItem_Click);
             // 
-            // ExitToolStripMenuItem
+            // ConvertToJpegToolStripMenuItem
             // 
-            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ExitToolStripMenuItem.Text = "Exit";
-            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            this.ConvertToJpegToolStripMenuItem.Name = "ConvertToJpegToolStripMenuItem";
+            this.ConvertToJpegToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.ConvertToJpegToolStripMenuItem.Text = "Convert to JPEG";
+            this.ConvertToJpegToolStripMenuItem.Click += new System.EventHandler(this.ConvertToJpegToolStripMenuItem_Click);
+            // 
+            // ConvertToPngToolStripMenuItem
+            // 
+            this.ConvertToPngToolStripMenuItem.Name = "ConvertToPngToolStripMenuItem";
+            this.ConvertToPngToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.ConvertToPngToolStripMenuItem.Text = "Convert to PNG";
+            this.ConvertToPngToolStripMenuItem.Click += new System.EventHandler(this.ConvertToPngToolStripMenuItem_Click);
+            // 
+            // convertToTextToolStripMenuItem
+            // 
+            this.convertToTextToolStripMenuItem.Name = "convertToTextToolStripMenuItem";
+            this.convertToTextToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.convertToTextToolStripMenuItem.Text = "Convert to text";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(174, 6);
+            // 
+            // ExpandDimensionsToolStripMenuItem
+            // 
+            this.ExpandDimensionsToolStripMenuItem.Name = "ExpandDimensionsToolStripMenuItem";
+            this.ExpandDimensionsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.ExpandDimensionsToolStripMenuItem.Text = "Expand Dimensions";
+            // 
+            // ExtractRoiValuesToolStripMenuItem
+            // 
+            this.ExtractRoiValuesToolStripMenuItem.Name = "ExtractRoiValuesToolStripMenuItem";
+            this.ExtractRoiValuesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.ExtractRoiValuesToolStripMenuItem.Text = "Extract ROI values";
+            this.ExtractRoiValuesToolStripMenuItem.Click += new System.EventHandler(this.ExtractRoiValuesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -178,16 +194,24 @@
             this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.checkForUpdatesToolStripMenuItem.Text = "Check for Updates";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(168, 6);
+            // 
             // aboutRadLibToolStripMenuItem
             // 
             this.aboutRadLibToolStripMenuItem.Name = "aboutRadLibToolStripMenuItem";
             this.aboutRadLibToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.aboutRadLibToolStripMenuItem.Text = "About RadLib";
             // 
-            // toolStripSeparator1
+            // statusStrip1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(168, 6);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip";
             // 
             // tableLayoutPanel1
             // 
@@ -246,26 +270,19 @@
             this.FilePathColumn.Name = "FilePathColumn";
             this.FilePathColumn.ReadOnly = true;
             // 
-            // AddFileToolStripMenuItem
+            // ClearFilesToolStripMenuItem
             // 
-            this.AddFileToolStripMenuItem.Name = "AddFileToolStripMenuItem";
-            this.AddFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.AddFileToolStripMenuItem.Text = "Add File";
-            this.AddFileToolStripMenuItem.Click += new System.EventHandler(this.AddFileToolStripMenuItem_Click);
+            this.ClearFilesToolStripMenuItem.Name = "ClearFilesToolStripMenuItem";
+            this.ClearFilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ClearFilesToolStripMenuItem.Text = "Clear Files";
+            this.ClearFilesToolStripMenuItem.Click += new System.EventHandler(this.ClearFilesToolStripMenuItem_Click);
             // 
-            // AddFolderToolStripMenuItem
+            // toolStripSeparator4
             // 
-            this.AddFolderToolStripMenuItem.Name = "AddFolderToolStripMenuItem";
-            this.AddFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.AddFolderToolStripMenuItem.Text = "Add Folder";
-            this.AddFolderToolStripMenuItem.Click += new System.EventHandler(this.AddFolderToolStripMenuItem_Click);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -274,7 +291,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Batch Image Processor";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -296,8 +313,8 @@
         private System.Windows.Forms.ToolStripMenuItem ConvertToPngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem convertToTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem expandDimensionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem extractROIValuesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExpandDimensionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExtractRoiValuesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
@@ -312,6 +329,8 @@
         private System.Windows.Forms.ToolStripMenuItem AddFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem ClearFilesToolStripMenuItem;
     }
 }
 
