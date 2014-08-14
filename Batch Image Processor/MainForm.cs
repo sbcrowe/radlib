@@ -1,11 +1,31 @@
-﻿using System;
+﻿/**
+ * RadLib - Batch Image Processor
+ * Copyright (c) 2014 Scott Crowe
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Contact Details:
+ * Scott Crowe (mailto:sb.crowe@gmail.com)
+ */
+
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BatchImageProcessor.UI;
@@ -64,6 +84,14 @@ namespace BatchImageProcessor
                 foreach (var path in filePaths)
                 {
                     if (path.EndsWith(".dcm") || path.EndsWith(".img")) this.AddFile(path);
+                }
+                var subFolders = Directory.GetDirectories(openFolderDialog.SelectedPath);
+                foreach (var subFolder in subFolders)
+                {
+                    var subFolderFilePaths = Directory.GetFiles(subFolder);
+                    foreach (var subFolderFilePath in subFolderFilePaths)
+                        if (subFolderFilePath.EndsWith(".dcm") || subFolderFilePath.EndsWith(".img"))
+                            this.AddFile(subFolderFilePath);
                 }
             }
             this.RefreshAvailableButtons();
